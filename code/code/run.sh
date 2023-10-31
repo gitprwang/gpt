@@ -1,0 +1,1 @@
+deepspeed --include localhost:2,3 ceshi copy.py --dist 1 --rank 0 --gpu 2 --batch_size 256 --exp_name test --exp_id 002 --epoch 100 --workers 1 --lr 1e-5 
