@@ -3,7 +3,7 @@ from torch.utils.data import Dataset
 import os
 import pandas as pd
 import re
-from .rdkit_tools import cal_props, cal_scaffold, get_mol
+from rdkit_tools import cal_props, cal_scaffold, get_mol
 import json
 import tqdm
 import random
@@ -367,5 +367,5 @@ if __name__ == '__main__':
     all_data = ChemData([zinc_data_path], [uspto_data_path, rxn_data_path])
     
     print(len(all_data.train_data))
-    dataset = ChemDataSet(all_data)
+    dataset = ChemDataSet(all_data.train_data)
     print(dataset[0], len(dataset))
